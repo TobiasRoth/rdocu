@@ -1,0 +1,13 @@
+bookdown::gitbook:
+  split_bib: no
+  config:
+    toc:
+      collapse: section
+      after: |
+        </a></li>
+    edit: https://github.com/TobiasRoth/rdocu/edit/master/%s
+    download: no
+    sharing:
+      github: no
+      facebook: no
+      twitter: no
