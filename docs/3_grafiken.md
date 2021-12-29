@@ -5,7 +5,7 @@
 ## Nützliche Resourcen
 
 ### Links
-- (ggplot3)[https://ggplot2-book.org/]: Bookdown Version. Work in Progress Version des ggplot2 Buches.
+- [ggplot3](https://ggplot2-book.org/): Bookdown Version. Work in Progress Version des ggplot2 Buches.
 
 ## Karten mit ggplot
 

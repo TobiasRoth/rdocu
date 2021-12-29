@@ -186,34 +186,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.1</span> Units</h2>
 <p>Das Packet <code>units</code> ist nützlich um mit verschiedenen Einheiten umzugehen und diese einfach ineinander umwandeln zu können. Das Packet wird automatisch gebraucht, wenn Längen und Flächen von räumlichen Daten mit dem dem Packet <code>sf</code>berechnet werden. Im folgenden ein Beispiel mit räumlichen Flächenberechnungen</p>
 <p>Example: How units are used in package <code>sf</code>:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="misc.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(units)</span>
-<span id="cb9-2"><a href="misc.html#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="misc.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load biogeographic region shapefile as example</span></span>
-<span id="cb9-4"><a href="misc.html#cb9-4" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;daten//BGR/biogreg.shp&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb9-5"><a href="misc.html#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="misc.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate area (they are of class units, the unit is square meteres)</span></span>
-<span id="cb9-7"><a href="misc.html#cb9-7" aria-hidden="true" tabindex="-1"></a>(area <span class="ot">&lt;-</span> <span class="fu">st_area</span>(dat))</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="misc.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(units)</span>
+<span id="cb6-2"><a href="misc.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="misc.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load biogeographic region shapefile as example</span></span>
+<span id="cb6-4"><a href="misc.html#cb6-4" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;daten//BGR/biogreg.shp&quot;</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-5"><a href="misc.html#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="misc.html#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate area (they are of class units, the unit is square meteres)</span></span>
+<span id="cb6-7"><a href="misc.html#cb6-7" aria-hidden="true" tabindex="-1"></a>(area <span class="ot">&lt;-</span> <span class="fu">st_area</span>(dat))</span></code></pre></div>
 <pre><code>## Units: [m^2]
 ##  [1]  108439676 1330857641 4250867716 4198648313  478255132 4801875024
 ##  [7]  268386654 1933997234  784897484  237302331 1617081664 1628143377
 ## [13] 8804154605 5828156490 4836468172  187214296</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="misc.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change area to km^2</span></span>
-<span id="cb11-2"><a href="misc.html#cb11-2" aria-hidden="true" tabindex="-1"></a>area <span class="sc">%&gt;%</span> <span class="fu">set_units</span>(<span class="st">&quot;km^2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="misc.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change area to km^2</span></span>
+<span id="cb8-2"><a href="misc.html#cb8-2" aria-hidden="true" tabindex="-1"></a>area <span class="sc">%&gt;%</span> <span class="fu">set_units</span>(<span class="st">&quot;km^2&quot;</span>)</span></code></pre></div>
 <pre><code>## Units: [km^2]
 ##  [1]  108.4397 1330.8576 4250.8677 4198.6483  478.2551 4801.8750  268.3867
 ##  [8] 1933.9972  784.8975  237.3023 1617.0817 1628.1434 8804.1546 5828.1565
 ## [15] 4836.4682  187.2143</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="misc.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change class to numeric</span></span>
-<span id="cb13-2"><a href="misc.html#cb13-2" aria-hidden="true" tabindex="-1"></a>area <span class="sc">%&gt;%</span> <span class="fu">as.numeric</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="misc.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change class to numeric</span></span>
+<span id="cb10-2"><a href="misc.html#cb10-2" aria-hidden="true" tabindex="-1"></a>area <span class="sc">%&gt;%</span> <span class="fu">as.numeric</span>()</span></code></pre></div>
 <pre><code>##  [1]  108439676 1330857641 4250867716 4198648313  478255132 4801875024
 ##  [7]  268386654 1933997234  784897484  237302331 1617081664 1628143377
 ## [13] 8804154605 5828156490 4836468172  187214296</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="misc.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: if you want to make a calculations with units, other elements need to be of </span></span>
-<span id="cb15-2"><a href="misc.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># class units as well</span></span>
-<span id="cb15-3"><a href="misc.html#cb15-3" aria-hidden="true" tabindex="-1"></a>area <span class="sc">&gt;</span> <span class="fu">as_units</span>(<span class="dv">1000</span>, <span class="st">&quot;km^2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="misc.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: if you want to make a calculations with units, other elements need to be of </span></span>
+<span id="cb12-2"><a href="misc.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># class units as well</span></span>
+<span id="cb12-3"><a href="misc.html#cb12-3" aria-hidden="true" tabindex="-1"></a>area <span class="sc">&gt;</span> <span class="fu">as_units</span>(<span class="dv">1000</span>, <span class="st">&quot;km^2&quot;</span>)</span></code></pre></div>
 <pre><code>##  [1] FALSE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE  TRUE
 ## [13]  TRUE  TRUE  TRUE FALSE</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="misc.html#cb17-1" aria-hidden="true" tabindex="-1"></a>area <span class="sc">-</span> <span class="fu">as_units</span>(<span class="dv">10</span>, <span class="st">&quot;km^2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="misc.html#cb14-1" aria-hidden="true" tabindex="-1"></a>area <span class="sc">-</span> <span class="fu">as_units</span>(<span class="dv">10</span>, <span class="st">&quot;km^2&quot;</span>)</span></code></pre></div>
 <pre><code>## Units: [m^2]
 ##  [1]   98439676 1320857641 4240867716 4188648313  468255132 4791875024
 ##  [7]  258386654 1923997234  774897484  227302331 1607081664 1618143377

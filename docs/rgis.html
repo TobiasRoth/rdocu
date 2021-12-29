@@ -195,26 +195,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="allgemeine-funktionen" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Allgemeine Funktionen</h2>
 <p>Eine Tabelle (data.frame oder tibble) mit x und y Koordinaten in ein Objekt der Klasse <code>sf</code> umwandeln.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="rgis.html#cb1-1" aria-hidden="true" tabindex="-1"></a>bundeshaus <span class="ot">&lt;-</span> </span>
-<span id="cb1-2"><a href="rgis.html#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
-<span id="cb1-3"><a href="rgis.html#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">&quot;Bern Bundesplatz&quot;</span>),</span>
-<span id="cb1-4"><a href="rgis.html#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">c</span>(<span class="fl">2600472.500</span>),</span>
-<span id="cb1-5"><a href="rgis.html#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">1199555.500</span>)</span>
-<span id="cb1-6"><a href="rgis.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-7"><a href="rgis.html#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>), <span class="at">crs =</span> <span class="dv">2056</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="rgis.html#cb2-1" aria-hidden="true" tabindex="-1"></a>bundeshaus <span class="ot">&lt;-</span> </span>
+<span id="cb2-2"><a href="rgis.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb2-3"><a href="rgis.html#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">&quot;Bern Bundesplatz&quot;</span>),</span>
+<span id="cb2-4"><a href="rgis.html#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">c</span>(<span class="fl">2600472.500</span>),</span>
+<span id="cb2-5"><a href="rgis.html#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">1199555.500</span>)</span>
+<span id="cb2-6"><a href="rgis.html#cb2-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-7"><a href="rgis.html#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>), <span class="at">crs =</span> <span class="dv">2056</span>)</span></code></pre></div>
 <p>Daten von einem .csv File einlesen und in ein Rasterobjekt verwandeln.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="rgis.html#cb2-1" aria-hidden="true" tabindex="-1"></a>dhm <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;daten/digitales_hoehenmodel.csv.zip&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-2"><a href="rgis.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rasterFromXYZ</span>(<span class="at">crs =</span> <span class="dv">21781</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="rgis.html#cb3-1" aria-hidden="true" tabindex="-1"></a>dhm <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;daten/digitales_hoehenmodel.csv.zip&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="rgis.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rasterFromXYZ</span>(<span class="at">crs =</span> <span class="dv">21781</span>)</span></code></pre></div>
 <p>Die folgenden Koordinatensysteme brauche ich relativ häufig.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="rgis.html#cb3-1" aria-hidden="true" tabindex="-1"></a>ch1903 <span class="ot">&lt;-</span> <span class="fu">CRS</span>(<span class="st">&quot;+init=epsg:21781&quot;</span>)       <span class="co"># Old Swiss grid 1903</span></span>
-<span id="cb3-2"><a href="rgis.html#cb3-2" aria-hidden="true" tabindex="-1"></a>chLV95 <span class="ot">&lt;-</span> <span class="fu">CRS</span>(<span class="st">&quot;+init=epsg:2056&quot;</span>)        <span class="co"># New Swiss grid 1903+ </span></span>
-<span id="cb3-3"><a href="rgis.html#cb3-3" aria-hidden="true" tabindex="-1"></a>wgs84 <span class="ot">&lt;-</span>   <span class="fu">CRS</span>(<span class="st">&quot;+init=epsg:4326&quot;</span>)       <span class="co"># WGS 84 </span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="rgis.html#cb4-1" aria-hidden="true" tabindex="-1"></a>ch1903 <span class="ot">&lt;-</span> <span class="fu">CRS</span>(<span class="st">&quot;+init=epsg:21781&quot;</span>)       <span class="co"># Old Swiss grid 1903</span></span>
+<span id="cb4-2"><a href="rgis.html#cb4-2" aria-hidden="true" tabindex="-1"></a>chLV95 <span class="ot">&lt;-</span> <span class="fu">CRS</span>(<span class="st">&quot;+init=epsg:2056&quot;</span>)        <span class="co"># New Swiss grid 1903+ </span></span>
+<span id="cb4-3"><a href="rgis.html#cb4-3" aria-hidden="true" tabindex="-1"></a>wgs84 <span class="ot">&lt;-</span>   <span class="fu">CRS</span>(<span class="st">&quot;+init=epsg:4326&quot;</span>)       <span class="co"># WGS 84 </span></span></code></pre></div>
 <p>Mit den folgenden Funktionen können Daten zwischen Koordinatensystemn umgewandelt werden.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="rgis.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Für sf objects</span></span>
-<span id="cb4-2"><a href="rgis.html#cb4-2" aria-hidden="true" tabindex="-1"></a>bundeshaus <span class="sc">%&gt;%</span> <span class="fu">st_transform</span>(<span class="at">crs =</span> <span class="dv">21781</span>)</span>
-<span id="cb4-3"><a href="rgis.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="rgis.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># For raster objects</span></span>
-<span id="cb4-5"><a href="rgis.html#cb4-5" aria-hidden="true" tabindex="-1"></a>dhm <span class="sc">%&gt;%</span>  <span class="fu">projectRaster</span>(<span class="at">crs =</span> <span class="dv">2056</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="rgis.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Für sf objects</span></span>
+<span id="cb5-2"><a href="rgis.html#cb5-2" aria-hidden="true" tabindex="-1"></a>bundeshaus <span class="sc">%&gt;%</span> <span class="fu">st_transform</span>(<span class="at">crs =</span> <span class="dv">21781</span>)</span>
+<span id="cb5-3"><a href="rgis.html#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="rgis.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># For raster objects</span></span>
+<span id="cb5-5"><a href="rgis.html#cb5-5" aria-hidden="true" tabindex="-1"></a>dhm <span class="sc">%&gt;%</span>  <span class="fu">projectRaster</span>(<span class="at">crs =</span> <span class="dv">2056</span>)</span></code></pre></div>
 
 </div>
 </div>
