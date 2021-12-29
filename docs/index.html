@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Useful R Code</title>
-  <meta name="description" content="This GitHub-book is collection of r code that I finde useful." />
+  <title>Nützlicher R Code</title>
+  <meta name="description" content="This GitHub-book is collection of r code that I finde useful. It is written in german." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Useful R Code" />
+  <meta property="og:title" content="Nützlicher R Code" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="/images/cover.jpg" />
-  <meta property="og:description" content="This GitHub-book is collection of r code that I finde useful." />
+  
+  <meta property="og:description" content="This GitHub-book is collection of r code that I finde useful. It is written in german." />
   <meta name="github-repo" content="TobiasRoth/rdocu" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Useful R Code" />
+  <meta name="twitter:title" content="Nützlicher R Code" />
   
-  <meta name="twitter:description" content="This GitHub-book is collection of r code that I finde useful." />
-  <meta name="twitter:image" content="/images/cover.jpg" />
+  <meta name="twitter:description" content="This GitHub-book is collection of r code that I finde useful. It is written in german." />
+  
 
 <meta name="author" content="Tobias Roth" />
 
 
-<meta name="date" content="2021-08-03" />
+<meta name="date" content="2021-12-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 
-<link rel="next" href="figures.html"/>
+<link rel="next" href="intro.html"/>
 <script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -55,6 +55,70 @@
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 </head>
@@ -69,13 +133,33 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Einleitung</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Allgemein</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-contribute"><i class="fa fa-check"></i>How to contribute?</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#beispieldaten"><i class="fa fa-check"></i><b>2.1</b> Beispieldaten</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="figures.html"><a href="figures.html"><i class="fa fa-check"></i><b>1</b> Figures</a></li>
-<li class="chapter" data-level="2" data-path="rgis.html"><a href="rgis.html"><i class="fa fa-check"></i><b>2</b> Spatial functions</a></li>
+<li class="chapter" data-level="3" data-path="datenaufbereitung.html"><a href="datenaufbereitung.html"><i class="fa fa-check"></i><b>3</b> Datenaufbereitung</a></li>
+<li class="chapter" data-level="4" data-path="grafiken.html"><a href="grafiken.html"><i class="fa fa-check"></i><b>4</b> Grafiken</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="grafiken.html"><a href="grafiken.html#nützliche-resourcen"><i class="fa fa-check"></i><b>4.1</b> Nützliche Resourcen</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="grafiken.html"><a href="grafiken.html#links"><i class="fa fa-check"></i><b>4.1.1</b> Links</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="grafiken.html"><a href="grafiken.html#karten-mit-ggplot"><i class="fa fa-check"></i><b>4.2</b> Karten mit ggplot</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="rgis.html"><a href="rgis.html"><i class="fa fa-check"></i><b>5</b> GIS-Funktionen</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="rgis.html"><a href="rgis.html#nützliche-resourcen-1"><i class="fa fa-check"></i><b>5.1</b> Nützliche Resourcen</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="rgis.html"><a href="rgis.html#links-1"><i class="fa fa-check"></i><b>5.1.1</b> Links</a></li>
+<li class="chapter" data-level="5.1.2" data-path="rgis.html"><a href="rgis.html#packages"><i class="fa fa-check"></i><b>5.1.2</b> Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="rgis.html"><a href="rgis.html#allgemeine-funktionen"><i class="fa fa-check"></i><b>5.2</b> Allgemeine Funktionen</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="misc.html"><a href="misc.html"><i class="fa fa-check"></i><b>6</b> Verschiedenes</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="misc.html"><a href="misc.html#units"><i class="fa fa-check"></i><b>6.1</b> Units</a></li>
+</ul></li>
 <li class="divider"></li>
 </a></li>
 
@@ -88,7 +172,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Useful R Code</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Nützlicher R Code</a>
           </h1>
         </div>
 
@@ -97,22 +181,14 @@
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">Useful R Code</h1>
+<h1 class="title">Nützlicher R Code</h1>
 <p class="author"><em>Tobias Roth</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-08-03</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>2021-12-29</em></p>
 </div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
-<p>In this repository I describe R-code that I find useful and occasionally need. I made the documentation for myself, because I quickly forget code that I don’t need very often. However, the documentation is public, with the hope that it might be useful for others.</p>
-<div id="how-to-contribute" class="section level2 unnumbered">
-<h2>How to contribute?</h2>
-<p>It is open so that everybody with a <a href="https://github.com">GitHub</a> account can make comments and suggestions for improvement. Readers can contribute in two ways. One way is to add an <a href="https://github.com/TobiasRoth/rdocu/issues">issue</a>. The second way is to contribute content directly through the edit button at the top of the page (i.e. a symbol showing a pencil in a square). That button is linked to the rmarkdown source file of each page. You can correct typos or add new text and then submit a <a href="https://help.github.com/articles/about-pull-requests/">GitHub pull request</a>. I try to respond to you as quickly as possible.</p>
-</div>
-<div id="acknowledgments" class="section level2 unnumbered">
-<h2>Acknowledgments</h2>
-<p>I thank <em>Yihui Xie</em> for providing <a href="bhttps://bookdown.org/yihui/bookdown/">bookdown</a> which makes it much fun to write open documentations such as this.</p>
+<div id="einleitung" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Einleitung</h1>
+<p>In diesem Repository beschreibe ich R-Code, den ich nützlich finde. Ich habe die Dokumentation für mich selbst erstellt, da ich Code, den ich nicht so oft brauche, schnell vergesse.</p>
 
-</div>
 </div>
             </section>
 
@@ -120,7 +196,7 @@
         </div>
       </div>
 
-<a href="figures.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

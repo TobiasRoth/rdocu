@@ -1,0 +1,22 @@
+
+# Allgemein {#intro}
+
+```{r echo=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+## Beispieldaten
+
+Ich verwende die folgenden Beispielsdaten
+
+- (Biogeographische Regionen der Schweiz)[https://www.bafu.admin.ch/bafu/de/home/themen/landschaft/publikationen-studien/publikationen/die-biogeographischen-regionen-der-schweiz.html]
+
+- Digitales Höhenmodell der Schweiz mit einer 100m x 100m Auflösung.
+
+```{r, echo=FALSE, eval=FALSE}
+dat <- read_delim("~/Dropbox/3_Resourcen/Datengrundlagen/Gelaendedaten/Gelaendedaten.CSV.zip", delim = ";")
+r <- dat %>% 
+  dplyr::select(x = KX, y = KY, ele = HOEHE) %>% 
+  write_csv("daten//digitales_hoehenmodel.csv")
+```
+

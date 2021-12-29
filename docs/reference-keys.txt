@@ -1,2 +1,15 @@
-figures
+einleitung
+intro
+beispieldaten
+datenaufbereitung
+grafiken
+nützliche-resourcen
+links
+karten-mit-ggplot
 rgis
+nützliche-resourcen-1
+links-1
+packages
+allgemeine-funktionen
+misc
+units

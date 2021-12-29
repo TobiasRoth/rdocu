@@ -1,0 +1,36 @@
+
+# Verschiedenes {#misc}
+
+```{r preparation, echo=FALSE, message=FALSE}
+library(tidyverse)
+library(sf)
+```
+
+## Units {#units}
+
+Das Packet `units` ist nützlich um mit verschiedenen Einheiten umzugehen und diese einfach ineinander umwandeln zu können. Das Packet wird automatisch gebraucht, wenn Längen und Flächen von räumlichen Daten mit dem dem Packet `sf`berechnet werden. Im folgenden ein Beispiel mit räumlichen Flächenberechnungen
+
+Example: How units are used in package `sf`:
+
+```{r, message=FALSE}
+library(units)
+
+# Load biogeographic region shapefile as example
+dat <- st_read("daten//BGR/biogreg.shp", quiet = TRUE)
+
+# Calculate area (they are of class units, the unit is square meteres)
+(area <- st_area(dat))
+
+# Change area to km^2
+area %>% set_units("km^2")
+
+# Change class to numeric
+area %>% as.numeric()
+
+# Note: if you want to make a calculations with units, other elements need to be of 
+# class units as well
+area > as_units(1000, "km^2")
+area - as_units(10, "km^2")
+```
+
+
